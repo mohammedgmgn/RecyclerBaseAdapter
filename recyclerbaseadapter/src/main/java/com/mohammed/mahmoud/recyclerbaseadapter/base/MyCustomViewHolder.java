@@ -34,5 +34,16 @@ public  class MyCustomViewHolder extends RecyclerView.ViewHolder {
         MyCustomViewHolder mHolder = new MyCustomViewHolder(context, itemView);
         return mHolder;
     }
+    private  <T extends View> T getView(int viewId)
+    {
+        View view = mViews.get(viewId);
+        if (view == null)
+        {
+            view = mConvertView.findViewById(viewId);
+            mViews.put(viewId, view);
+        }
+        return (T) view;
+    }
+
 
 }
