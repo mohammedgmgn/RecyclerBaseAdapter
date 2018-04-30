@@ -29,8 +29,7 @@ public  class MyCustomViewHolder extends RecyclerView.ViewHolder {
         return holder;
     }
 
-    public static MyCustomViewHolder createViewHolder(Context context,
-                                              ViewGroup parent, int layoutId)
+    public static MyCustomViewHolder createViewHolder(Context context, ViewGroup parent, int layoutId)
     {
         View itemView = LayoutInflater.from(context).inflate(layoutId, parent,
                 false);
