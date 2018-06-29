@@ -1,6 +1,7 @@
 package com.mohammed.mahmoud.recyclerbaseadapter.base.base;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -57,13 +58,19 @@ public  class MyCustomViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public MyCustomViewHolder setImageResource(int viewId, int resId)
-    {
+    public MyCustomViewHolder setImageResource(int viewId, int resId) {
         ImageView view = getView(viewId);
         view.setImageResource(resId);
         return this;
 
 
+    }
+    public MyCustomViewHolder setImageDrawable(int viewId, Drawable drawable)
+    {
+        ImageView view = getView(viewId);
+        view.setImageDrawable(drawable);
+        return this;
+    }
 
 
 }
