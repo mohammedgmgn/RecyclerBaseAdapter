@@ -28,6 +28,11 @@ public  class MyCustomViewHolder extends RecyclerView.ViewHolder {
         MyCustomViewHolder holder = new MyCustomViewHolder(context, itemView);
         return holder;
     }
+    public View getConvertView()
+    {
+        return mConvertView;
+    }
+
 
     public static MyCustomViewHolder createViewHolder(Context context, ViewGroup parent, int layoutId)
     {

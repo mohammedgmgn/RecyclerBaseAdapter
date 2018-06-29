@@ -3,32 +3,48 @@ package com.mohammed.mahmoud.recyclerbaseadapter.base;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import com.mohammed.mahmoud.recyclerbaseadapter.base.base.ItemViewDelegate;
 
 import java.util.List;
 
-public class CoreAdapter <T> extends RecyclerView.Adapter<MyCustomViewHolder> {
-    protected Context mContext;
-    protected List<T> mDatas;
-    public CoreAdapter(Context context, List<T> datas) {
+public abstract class CoreAdapter <T> extends MultiItemTypeAdapter<T> {
+    private Context mContext;
+    private List<T> mDatas;
+    private LayoutInflater mInflater;
+    private int mLayoutId;
+
+    public CoreAdapter(Context context,final int layoutId, List<T> datas) {
+        super(context,datas);
         mContext = context;
         mDatas = datas;
+        mLayoutId = layoutId;
+        mDatas = datas;
+        addItemViewDelegate(new ItemViewDelegate<T>()
+        {
+            @Override
+            public int getItemViewLayoutId()
+            {
+                return layoutId;
+            }
+
+            @Override
+            public boolean isForViewType( T item, int position)
+            {
+                return true;
+            }
+
+            @Override
+            public void convert(MyCustomViewHolder holder, T t, int position)
+            {
+                CoreAdapter.this.convert(holder, t, position);
+            }
+        });
     }
 
 
-    @NonNull
-    @Override
-    public MyCustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
-    }
+    protected abstract void convert(RecyclerView.ViewHolder holder, T t, int position);
 
-    @Override
-    public void onBindViewHolder(@NonNull MyCustomViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return mDatas.size();
-    }
 }
