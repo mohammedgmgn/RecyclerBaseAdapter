@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -40,7 +41,7 @@ public  class MyCustomViewHolder extends RecyclerView.ViewHolder {
         MyCustomViewHolder mHolder = new MyCustomViewHolder(context, itemView);
         return mHolder;
     }
-    private  <T extends View> T getView(int viewId)
+    private    <T extends View> T getView(int viewId)
     {
         View view = mViews.get(viewId);
         if (view == null)
@@ -51,7 +52,20 @@ public  class MyCustomViewHolder extends RecyclerView.ViewHolder {
         return (T) view;
     }
 
-    public  MyCustomViewHolder setRemoteImage(String Url,int imageLayoutId){
+    public ImageView getImageView(int viewId)
+    {
+        ImageView iv = getView(viewId);
+        return iv;
+    }
+
+    public MyCustomViewHolder setText(int viewId, String text)
+    {
+        TextView tv = getView(viewId);
+        tv.setText(text);
+        return this;
+    }
+
+    public  MyCustomViewHolder setRemoteImage(int imageLayoutId,String Url){
         ImageView imageView =getView(imageLayoutId);
         Glide.with(mContext).load(Url).into(imageView);
         return this;
