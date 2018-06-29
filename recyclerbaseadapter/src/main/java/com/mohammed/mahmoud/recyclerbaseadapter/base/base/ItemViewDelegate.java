@@ -1,8 +1,6 @@
 package com.mohammed.mahmoud.recyclerbaseadapter.base.base;
 
 
-import com.mohammed.mahmoud.recyclerbaseadapter.base.MyCustomViewHolder;
-
 /**
  * Created by Mohammed  on 29/6/2018.
  */

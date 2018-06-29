@@ -1,12 +1,13 @@
 package com.mohammed.mahmoud.recyclerbaseadapter.base;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.mohammed.mahmoud.recyclerbaseadapter.base.base.ItemViewDelegate;
+import com.mohammed.mahmoud.recyclerbaseadapter.base.base.ItemViewDelegateManager;
+import com.mohammed.mahmoud.recyclerbaseadapter.base.base.MyCustomViewHolder;
 
 import java.util.List;
 

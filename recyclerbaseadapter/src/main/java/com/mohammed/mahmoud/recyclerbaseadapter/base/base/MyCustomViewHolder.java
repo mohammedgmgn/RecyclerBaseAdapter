@@ -1,4 +1,4 @@
-package com.mohammed.mahmoud.recyclerbaseadapter.base;
+package com.mohammed.mahmoud.recyclerbaseadapter.base.base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-
-import java.util.List;
 
 public  class MyCustomViewHolder extends RecyclerView.ViewHolder {
     private SparseArray<View> mViews;
@@ -58,6 +56,13 @@ public  class MyCustomViewHolder extends RecyclerView.ViewHolder {
         return this;
 
     }
+
+    public MyCustomViewHolder setImageResource(int viewId, int resId)
+    {
+        ImageView view = getView(viewId);
+        view.setImageResource(resId);
+        return this;
+
 
 
 

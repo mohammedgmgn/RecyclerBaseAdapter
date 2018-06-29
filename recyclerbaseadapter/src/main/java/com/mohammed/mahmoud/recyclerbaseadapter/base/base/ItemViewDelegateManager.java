@@ -1,8 +1,6 @@
-package com.mohammed.mahmoud.recyclerbaseadapter.base;
+package com.mohammed.mahmoud.recyclerbaseadapter.base.base;
 
 import android.support.v4.util.SparseArrayCompat;
-
-import com.mohammed.mahmoud.recyclerbaseadapter.base.base.ItemViewDelegate;
 
 
 public class ItemViewDelegateManager<T>
